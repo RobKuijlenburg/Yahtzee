@@ -1,4 +1,4 @@
-
+"use strict";
 const td1 = document.querySelector('#td1');
 const td2 = document.querySelector('#td2');
 const td3 = document.querySelector('#td3');
