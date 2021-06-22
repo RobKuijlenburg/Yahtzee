@@ -14,7 +14,6 @@ const td13 = document.querySelector('#td13');
 const liItems = document.querySelectorAll('.li');
 const diceCount = {};
 const diceArray = []; 
-
 function diceThrow() {
     // generates 5 dice valued from 1-6
     throwDice();
@@ -53,15 +52,14 @@ function diceThrow() {
     }
 
     function singles() {
-        const reducer = (accumulator, currentValue) => accumulator + currentValue;
         for (let x = 0 ; x < diceArray.length; x++){
             switch (diceArray[x]) {
                 case 1:
                     td1.innerText = 1 * diceCount[1];
                     if(diceCount[1] === 3){
-                        td7.innerHTML = diceArray.reduce(reducer);
+                        td7.innerText = 1 * 3;
                     }   if(diceCount[1] === 4){
-                        td8.innerHTML = diceArray.reduce(reducer);
+                        td8.innerText = 1 * 4;
                     }   if(diceCount[1] === 5){
                         td12.innerText = 50;
                     }
@@ -71,17 +69,17 @@ function diceThrow() {
                     if(diceCount[2] === 3){
                         td7.innerText = 2 * 3;
                     } if(diceCount[2] === 4){
-                        td7.innerHTML = diceArray.reduce(reducer);
+                        td8.innerText = 2 * 4;
                     }  if(diceCount[2] === 5){
-                        td8.innerHTML = diceArray.reduce(reducer);
+                        td12.innerText = 50;
                     }
                     break;
                 case 3:
                     td3.innerText = 3 * diceCount[3];
                     if(diceCount[3] === 3){
-                        td7.innerHTML = diceArray.reduce(reducer);
+                        td7.innerText = 3 * 3;
                     }   if(diceCount[3] === 4){
-                        td8.innerHTML = diceArray.reduce(reducer);
+                        td8.innerText = 3 * 4;
                     }   if(diceCount[3] === 5){
                         td12.innerText = 50;
                     }
@@ -89,9 +87,9 @@ function diceThrow() {
                 case 4:
                     td4.innerText = 4 * diceCount[4];
                     if(diceCount[4] === 3){
-                        td7.innerHTML = diceArray.reduce(reducer);
+                        td7.innerText = 4 * 3;
                     }   if(diceCount[4] === 4){
-                        td8.innerHTML = diceArray.reduce(reducer);
+                        td8.innerText = 4 * 4;
                     }   if(diceCount[4] === 5){
                         td12.innerText = 50;
                     }
@@ -99,9 +97,9 @@ function diceThrow() {
                 case 5:
                     td5.innerText = 5 * diceCount[5];
                     if(diceCount[5] === 3){
-                        td7.innerHTML = diceArray.reduce(reducer);
+                        td7.innerText = 5 * 3;
                     }   if(diceCount[5] === 4){
-                        td8.innerHTML = diceArray.reduce(reducer);
+                        td8.innerText = 5 * 4;
                     }   if(diceCount[5] === 5){
                         td12.innerText = 50;
                     }
@@ -109,9 +107,9 @@ function diceThrow() {
                 case 6:
                     td6.innerText = 6 * diceCount[6];
                     if(diceCount[6] === 3){
-                        td7.innerHTML = diceArray.reduce(reducer);
+                        td7.innerText = 6 * 3;
                     }   if(diceCount[6] === 4){
-                        td8.innerHTML = diceArray.reduce(reducer);
+                        td8.innerText = 6 * 4;
                     }   if(diceCount[6] === 5){
                         td12.innerText = 50;
                     }
