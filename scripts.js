@@ -1,4 +1,5 @@
 "use strict";
+// TODO :: no need for all the td's, there's probably a cleaner way
 const td1 = document.querySelector('#td1');
 const td2 = document.querySelector('#td2');
 const td3 = document.querySelector('#td3');
@@ -36,6 +37,8 @@ function diceThrow() {
 
     function throwDice() {
         for (let i = 0 ; i < 5 ; i++) {
+            // TODO :: no need for a variable
+            // only use a variable that is being used once for readability
             var dice = Math.floor(Math.random()*6) + 1;
             diceArray.push(dice);
         }
@@ -56,10 +59,12 @@ function diceThrow() {
     function singles() {
         const reducer = (accumulator, currentValue) => accumulator + currentValue;
         for (let x = 0 ; x < diceArray.length; x++){
+            // TODO :: no need for the switch
             switch (diceArray[x]) {
                 case 1:
                     td1.innerText = 1 * diceCount[1];
                     if(diceCount[1] === 3){
+                        // TODO :: can set total before the for loop
                         td7.innerHTML = diceArray.reduce(reducer);
                     }   if(diceCount[1] === 4){
                         td8.innerHTML = diceArray.reduce(reducer);
@@ -133,20 +138,25 @@ function diceThrow() {
     }
 
     function getSmStraightScore() {
+        // TODO :: can be consts
         let joinDices = diceArray.join('');
+        // nice use of regex
         let repDices = joinDices.toString().replace(/(.)\1/,'$1');
         let x = (/1234|2345|3456/.test(repDices));
         return x ? 30 : 0;
     }
     
     function getLgStraightScore() {
+        // TODO :: can be consts
         let joinDices = diceArray.join('');
+        // nice use of regex
         let repDices = joinDices.toString().replace(/(.)\1/,'$1');
         let x = (/12345|23456/.test(repDices));
         return x ? 40 : 0;
     }
 
     function straights() {
+        // TODO :: if it's a large straight it's also a small straight, so no need for the ifs here
         if (getLgStraightScore() === 40 && getSmStraightScore() === 30){
             td11.innerHTML = 40;
         } if (getLgStraightScore() === 0 && getSmStraightScore() === 30){
